@@ -1,0 +1,11 @@
+6/19/2026 - [Lesson 4] Deploy the Log4Shell Attack
+
+Point a listener at your Kali box
+
+Inject the Log4Shell payload into the target
+
+Watch the callback land
+
+Kali IP address
+└─# hostname -I
+172.17.0.3
