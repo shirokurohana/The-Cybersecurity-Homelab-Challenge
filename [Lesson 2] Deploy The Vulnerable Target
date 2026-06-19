@@ -1,0 +1,15 @@
+6/19/2026 - [Lesson 2] Deploy The Vulnerable Target
+
+1. Grab the Vulhub Log4Shell environment
+2. docker compose up to launch the vulnerable app
+3. Open it in your browser, this is your target
+
+Step 1: Simulate a Vulnerable Service - Apache Solr
+Apache Solr is an open source search platform, widely used for indexing and searching large volumes of data, and is commonly deployed as the engine behind enterprise search applications.
+
+Step 3: Open Solr in Your Browser
+Once the container is running, open your browser and navigate to:
+
+http://localhost:8983/solr/
+
+Succesful! See screenshot
