@@ -1,0 +1,11 @@
+6/19/2026 -  [Lesson 5] Secure The Web Application
+
+Your mission in this lesson (~10 min):
+
+Apply the fix to the target (the mitigation flag now, the real-world fix being a Log4j upgrade)
+Run the exact same payload from Lesson 4
+Watch the callback never come
+
+docker run -d --name solr-lab-patch -p 8983:8983 -e LOG4J_FORMAT_MSG_NO_LOOKUPS=true vulhub/solr:8.11.0
+
+Done! Successful! See LinkedIn Post!
