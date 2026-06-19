@@ -1,0 +1,68 @@
+6/19/2026 - [Lesson 3] Build The Attacker Machine
+
+You've got the vulnerable app running.
+
+Two jobs in this lesson:
+
+Stand up your attacker.
+Actually understand what you're about to exploit.
+
+Log4J is a third-party library commonly embedded within web applications written in Java.
+A third-party library is a library you call and embed within your own application to extend the functionality of your own code.
+
+If you are a web developer (or developer in general), you need all kinds of functionality to get your applications to work. Instead of writing all of these different functions yourself, you can call other libraries (and functions) to get that functionality without writing the code.
+
+Developers embed Log4J to understand how the users and code interact with one another.
+
+From version 2.0-beta9 up to 2.14.1, the Log4J Library can be tricked into looking up and running remote code just from text an attacker controls.
+
+Type the wrong string into a search box or username, and the server fetches instructions from the attacker.
+
+That's it. That's the bug that broke the internet.
+
+Step 1: Launch a Kali Attacker Container
+Today we set up Kali Linux.
+
+If you do not know, Kali Linux is a specialized Linux distribution designed for penetration testing, ethical hacking, and digital forensics, and comes pre-installed with hundreds of security tools.
+
+First, let's make a new folder.
+
+
+
+
+FROM kalilinux/kali-last-release:latest
+
+ENV DEBIAN_FRONTEND=noninteractive  
+
+RUN apt update && apt upgrade -y && \  
+ apt install -y \  
+ curl \  
+ iputils-ping \  
+ nmap \  
+ netcat-traditional && \  
+ apt clean && \  
+ rm -rf /var/lib/apt/lists/*  
+  
+# Default shell when container starts  
+CMD ["/bin/bash"]  
+
+
+
+
+
+Then creates a new terminal shell.
+
+Build the Docker Image:
+
+docker build -t kali .
+
+Then run:
+
+docker run -it --name attacker kali
+
+-it: Interactive terminal session.
+
+
+
+
+Successful! See screenshots!
