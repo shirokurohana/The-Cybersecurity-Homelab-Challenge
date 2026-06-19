@@ -1,0 +1,19 @@
+6/18/2026 - [Lesson 1] Deploy Docker Engine
+
+- Installed Docker Desktop
+A Docker Image is a snapshot or template of a filesystem. It contains everything needed to run an application—code, runtime, libraries, environment variables, and configuration files. Images are read-only and can be shared via registries like Docker Hub. Think of a Docker Image as just a template that you run an instance off of.
+
+A Docker container is a running instance of a Docker image. Containers are isolated environments that run your application and its dependencies. You can create, start, stop, move, or delete containers using simple Docker commands. Unlike virtual machines, containers are lightweight and efficient.
+
+FROM ubuntu:24.04  
+  
+RUN apt-get update && \  
+ apt-get install -y curl vim iputils-ping net-tools && \  
+ apt-get clean  
+  
+CMD ["/bin/bash"]  
+
+Successful!: 
+PS C:\Users\count\ubuntu> docker run -it --name ubuntu-container ubuntu
+root@ff978d74694b:/# exit
+exit
